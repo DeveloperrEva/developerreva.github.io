@@ -382,8 +382,6 @@
                                 },
                                 size: "l",
                                 children: "USDT TRC20",
-                                alert: "Скопировано"
-                                
                             }),  Object(g.jsx)(o.d, {
                                 onClick: v,
                                 "data-copy": "1LRePz4LA3RYeE1ia6D4qmdo2g1o28rJvq",
