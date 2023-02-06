@@ -330,7 +330,7 @@
                                     color: "#F0F6FC",
                                     background: "#27303D"
                                 },
-                                "data-href": "https://github.com/Developereva",
+                                "data-href": "https://github.com/Developerreva",
                                 size: "l",
                                 children: "GitHub"
                             })]
