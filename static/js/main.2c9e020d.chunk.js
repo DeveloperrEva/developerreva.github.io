@@ -513,7 +513,7 @@
                             }), 
                             Object(g.jsxs)(o.l, {
                                 children: [Object(g.jsx)(I, {
-                                    title: "\u0045\u006e\u0064\u0057\u0061\u0079",
+                                    title: "\u0424\u043E\u0440\u0443\u043C\u0020\u0045\u006E\u0064\u0057\u0061\u0079",
                                     link: "https://endway.su",
                                     telegram: "https://t.me/end_raid",
                                     job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a\u002f\u0421\u043e\u002d\u041e\u0441\u043d\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
