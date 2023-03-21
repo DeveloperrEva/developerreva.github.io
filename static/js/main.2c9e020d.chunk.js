@@ -523,6 +523,12 @@
                                     telegram: "https://t.me/end_soft",
                                     job: "\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440",
                                     work: "2022now"
+                                }),
+                                Object(g.jsx)(I, {
+                                    title: '\u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 "\u041F\u043E\u043C\u043E\u0449\u043D\u0438\u043A\u0020\u0410\u0440\u0431\u0438\u0442\u0440\u0430\u0436\u043D\u0438\u043A\u0430"',
+                                    telegram: "https://t.me/HelperArbitr_bot",
+                                    job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u002F\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440",
+                                    work: "2023now"
                                 })]
                             })]
                         })
