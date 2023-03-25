@@ -432,6 +432,7 @@
                     r = e.telegram,
                     a = e.vk,
                     l = i.toLowerCase().endsWith("now") ? (i = i.slice(0, i.length - 3) + " \u0433\u043e\u0434\u0430", "\u044e \u0441") : (i += " \u0433\u0433.", "\u043b \u0432");
+                    q = i.toLowerCase().endsWith("never") ? (i = i.slice(0, i.length - 3) + " ", "") : (i += " ", "");
                 return Object(g.jsxs)(o.r, {
                     children: [Object(g.jsx)(o.y, {
                         style: {
@@ -446,7 +447,7 @@
                             whiteSpace: "normal"
                         },
                         type: "regular",
-                        children: ["\u2022 \u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c: ", n, Object(g.jsx)("br", {}), "\u2022 \u0420\u0430\u0431\u043e\u0442\u0430", l, " ", i]
+                        children: ["\u2022 \u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c: ", n, Object(g.jsx)("br", {}), "\u2022 \u0420\u0430\u0431\u043e\u0442\u0430", l, q, " ", i]
                     }), c && Object(g.jsx)(o.d, {
                         onClick: C,
                         "data-href": c,
@@ -540,7 +541,7 @@
                                     title: '\u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 "\u041C\u0430\u0441\u0441\u0430\u0436\u0020\u041D\u0430\u0442\u0430\u043B\u044C\u044F"',
                                     telegram: "https://t.me/Massage_Natalya_bot",
                                     job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A",
-                                    work: "—"
+                                    work: "2023now"
                                 })
                             ]
                             })]
