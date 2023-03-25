@@ -535,6 +535,12 @@
                                     telegram: "https://t.me/sunrisekfservers_bot",
                                     job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u002F\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440",
                                     work: "2023now"
+                                }),
+                                Object(g.jsx)(I, {
+                                    title: '\u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 "\u041C\u0430\u0441\u0441\u0430\u0436\u0020\u041D\u0430\u0442\u0430\u043B\u044C\u044F"',
+                                    telegram: "https://t.me/Massage_Natalya_bot",
+                                    job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A",
+                                    work: "2023now"
                                 })
                             ]
                             })]
