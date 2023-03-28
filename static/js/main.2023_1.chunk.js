@@ -123,7 +123,7 @@
                                     marginTop: "16px"
                                 }
                             }), Object(g.jsx)(m.a, {
-                                strings: ["Developer"],
+                                strings: ["Developer","NO TOXIC"],
                                 typeSpeed: 60,
                                 backSpeed: 10,
                                 cursorChar: "_",
@@ -166,7 +166,7 @@
                 }), 1e3)
             }
 
-            function A(e) {
+            /*function A(e) {
                 var t = e.activeModal,
                     c = e.setActiveModal,
                     i = s.a.useState(50),
@@ -264,7 +264,7 @@
                         })
                     })]
                 })
-            }
+            }*/
             var F = c(19),
                 z = c(45),
                 T = c(44);
@@ -293,7 +293,7 @@
                                 },
                                 level: "2",
                                 weight: "semibold",
-                                children: "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+                                children: "☎️ \u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B ☎️"
                             }), Object(g.jsx)(o.d, {
                                 onClick: C,
                                 before: Object(g.jsx)(F.c, {
@@ -364,7 +364,7 @@
                                 },
                                 level: "2",
                                 weight: "semibold",
-                                children: "\u0417\u0434\u0435\u0441\u044c \u0435\u0441\u0442\u044c \u0432\u0441\u0435 \u0441\u043f\u043e\u0441\u043e\u0431\u044b, \u043f\u0440\u0438 \u043f\u043e\u043c\u043e\u0449\u0438 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0432\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u043c\u0435\u043d\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c"
+                                children: "💸 \u0417\u0434\u0435\u0441\u044c \u0435\u0441\u0442\u044c \u0432\u0441\u0435 \u0441\u043f\u043e\u0441\u043e\u0431\u044b, \u043f\u0440\u0438 \u043f\u043e\u043c\u043e\u0449\u0438 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0432\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u043c\u0435\u043d\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c 💸"
                             }), Object(g.jsx)(o.d, {
                                 onClick: v,
                                 "data-copy": "TG23K9WgN3n4VeY345oLMRp8B6hGGWe8G3",
@@ -428,11 +428,11 @@
                     c = e.link,
                     n = e.job,
                     i = e.work,
+                    z = e.odnoras,
                     s = e.instagram,
                     r = e.telegram,
                     a = e.vk,
                     l = i.toLowerCase().endsWith("now") ? (i = i.slice(0, i.length - 3) + " \u0433\u043e\u0434\u0430", "\u044e \u0441") : (i += " \u0433\u0433.", "\u043b \u0432");
-                    q = i.toLowerCase().endsWith("never") ? (i = i.slice(0, i.length - 3) + " ", "") : (i += " ", "");
                 return Object(g.jsxs)(o.r, {
                     children: [Object(g.jsx)(o.y, {
                         style: {
@@ -443,11 +443,95 @@
                         children: t
                     }), Object(g.jsxs)(o.x, {
                         style: {
-                            marginBottom: "8px",
+                            marginBottom: "0px",
                             whiteSpace: "normal"
                         },
                         type: "regular",
-                        children: ["\u2022 \u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c: ", n, Object(g.jsx)("br", {}), "\u2022 \u0420\u0430\u0431\u043e\u0442\u0430", l, q, " ", i]
+                        children: ["\u2022 \u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c: ", n, Object(g.jsx)("br", {}), "\u2022 \u0420\u0430\u0431\u043e\u0442\u0430", l, " ", i]
+                    }),Object(g.jsxs)(o.x, {
+                        style: {
+                            marginBottom: "10px",
+                            whiteSpace: "normal"
+                        },
+                        type: "regular",
+                        children: ["\u2022 Заказной проект: ", z]
+                    }), c && Object(g.jsx)(o.d, {
+                        onClick: C,
+                        "data-href": c,
+                        style: {
+                            marginRight: "4px"
+                        },
+                        before: Object(g.jsx)(E.a, {}),
+                        mode: "commerce",
+                        children: "\u0412\u0435\u0431-\u0441\u0430\u0439\u0442"
+                    }), r && Object(g.jsx)(o.d, {
+                        onClick: C,
+                        "data-href": r,
+                        mode: "commerce",
+                        style: {
+                            verticalAlign: "top",
+                            marginRight: "4px",
+                            background: "#25A3E2"
+                        },
+                        before: Object(g.jsx)(F.c, {}),
+                        children: "Telegram"
+                    }), a && Object(g.jsx)(o.d, {
+                        onClick: C,
+                        "data-href": a,
+                        mode: "commerce",
+                        style: {
+                            verticalAlign: "top",
+                            marginRight: "4px",
+                            background: "#0077ff"
+                        },
+                        before: Object(g.jsx)(S.a, {}),
+                        children: "VK"
+                    }), s && Object(g.jsx)(o.d, {
+                        onClick: C,
+                        "data-href": s,
+                        mode: "commerce",
+                        style: {
+                            verticalAlign: "top",
+                            marginRight: "4px",
+                            background: "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)"
+                        },
+                        before: Object(g.jsx)(F.b, {}),
+                        children: "Instagram"
+                    })]
+                })
+            }
+
+
+            function Y(e) {
+                var t = e.title,
+                    c = e.link,
+                    n = e.job,
+                    z = e.odnoras,
+                    s = e.instagram,
+                    r = e.telegram,
+                    a = e.vk;
+                return Object(g.jsxs)(o.r, {
+                    children: [Object(g.jsx)(o.y, {
+                        style: {
+                            marginBottom: "4px"
+                        },
+                        level: "2",
+                        weight: "semibold",
+                        children: t
+                    }), Object(g.jsxs)(o.x, {
+                        style: {
+                            marginBottom: "1px",
+                            whiteSpace: "normal"
+                        },
+                        type: "regular",
+                        children: ["\u2022 \u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c: ", n]
+                    }),Object(g.jsxs)(o.x, {
+                        style: {
+                            marginBottom: "10px",
+                            whiteSpace: "normal"
+                        },
+                        type: "regular",
+                        children: ["\u2022 Заказной проект: ", z]
                     }), c && Object(g.jsx)(o.d, {
                         onClick: C,
                         "data-href": c,
@@ -514,34 +598,39 @@
                             }), 
                             Object(g.jsxs)(o.l, {
                                 children: [Object(g.jsx)(I, {
-                                    title: "\u0424\u043E\u0440\u0443\u043C\u0020\u0045\u006E\u0064\u0057\u0061\u0079",
+                                    title: "🌐 \u0424\u043E\u0440\u0443\u043C\u0020 «\u0045\u006E\u0064\u0057\u0061\u0079»",
                                     link: "https://endway.su",
                                     telegram: "https://t.me/end_raid",
                                     job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a\u002f\u0421\u043e\u002d\u041e\u0441\u043d\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
-                                    work: "2022now"
+                                    work: "2022now",
+                                    odnoras: "❌"
                                 }), Object(g.jsx)(I, {
-                                    title: '\u0422\u0435\u043b\u0435\u0433\u0440\u0430\u043c\u0020\u043a\u0430\u043d\u0430\u043b\u000d\u000a "\u0045\u006e\u0064\u0020\u0053\u006f\u0066\u0074"',
+                                    title: '📜 \u0422\u0435\u043b\u0435\u0433\u0440\u0430\u043c\u0020\u043a\u0430\u043d\u0430\u043b\u000d\u000a «\u0045\u006e\u0064\u0020\u0053\u006f\u0066\u0074»',
                                     telegram: "https://t.me/end_soft",
                                     job: "\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440",
-                                    work: "2022now"
+                                    work: "2022now",
+                                    odnoras: "❌"
                                 }),
                                 Object(g.jsx)(I, {
-                                    title: '\u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 "\u041F\u043E\u043C\u043E\u0449\u043D\u0438\u043A\u0020\u0410\u0440\u0431\u0438\u0442\u0440\u0430\u0436\u043D\u0438\u043A\u0430"',
+                                    title: '🤖 \u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 «\u041F\u043E\u043C\u043E\u0449\u043D\u0438\u043A\u0020\u0410\u0440\u0431\u0438\u0442\u0440\u0430\u0436\u043D\u0438\u043A\u0430»',
                                     telegram: "https://t.me/HelperArbitr_bot",
                                     job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u002F\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440",
-                                    work: "2023now"
+                                    work: "2023now",
+                                    odnoras: "❌"
                                 }),
                                 Object(g.jsx)(I, {
-                                    title: '\u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 "\u0053\u0075\u006E\u0072\u0069\u0073\u0065\u0020\u004B\u0046\u0020\u004D\u006F\u006E\u0069\u0074\u006F\u0072\u0069\u006E\u0067"',
+                                    title: '🤖 \u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 «\u0053\u0075\u006E\u0072\u0069\u0073\u0065\u0020\u004B\u0046\u0020\u004D\u006F\u006E\u0069\u0074\u006F\u0072\u0069\u006E\u0067»',
                                     telegram: "https://t.me/sunrisekfservers_bot",
                                     job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u002F\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440",
-                                    work: "2023now"
+                                    work: "2023now",
+                                    odnoras: "❌"
                                 }),
-                                Object(g.jsx)(I, {
-                                    title: '\u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 "\u041C\u0430\u0441\u0441\u0430\u0436\u0020\u041D\u0430\u0442\u0430\u043B\u044C\u044F"',
+                                Object(g.jsx)(Y, {
+                                    title: '🤖 \u0422\u0435\u043B\u0435\u0433\u0440\u0430\u043C\u0020\u0431\u043E\u0442 «\u041C\u0430\u0441\u0441\u0430\u0436\u0020\u041D\u0430\u0442\u0430\u043B\u044C\u044F»',
                                     telegram: "https://t.me/Massage_Natalya_bot",
                                     job: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A",
-                                    work: "2023now"
+                                    //work: "",
+                                    odnoras: "✅"
                                 })
                             ]
                             })]
@@ -606,10 +695,10 @@
                         style: {
                             justifyContent: "center"
                         },
-                        modal: Object(g.jsx)(A, {
-                            activeModal: O,
-                            setActiveModal: w
-                        }),
+//                        modal: Object(g.jsx)(A, {
+//                            activeModal: O,
+//                            setActiveModal: w
+//                        }),
                         children: [
                             [12, 1].includes((new Date).getMonth() + 1) && Object(g.jsx)(g.Fragment, {
                                 children: z && Object(g.jsx)(N.a, {
