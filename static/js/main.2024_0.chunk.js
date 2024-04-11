@@ -136,13 +136,13 @@
                                 },
                                 children: Object(g.jsx)(O, {})
                             }), 
-                            // Object(g.jsx)(o.s, {}), Object(g.jsx)(o.s, {}), Object(g.jsx)(o.s, {}), Object(g.jsx)("a", {
-                            //     href: "https://spotify-github-profile.vercel.app/api/view?uid=cprk1s0ifiad24m3kxwv5nxs3&redirect=true",
-                            //     children: Object(g.jsx)("img", {
-                            //         src: "https://spotify-github-profile.vercel.app/api/view?uid=cprk1s0ifiad24m3kxwv5nxs3&cover_image=true&theme=default&bar_color=47ffea&bar_color_cover=false",
-                            //         alt: ""
-                            //     })
-                            // })
+                            Object(g.jsx)(o.s, {}), Object(g.jsx)(o.s, {}), Object(g.jsx)(o.s, {}), Object(g.jsx)("a", {
+                                href: "https://spotify-github-profile.vercel.app/api/view?uid=kli09xgbbkil2q35z8zq4stcq&redirect=true",
+                                children: Object(g.jsx)("img", {
+                                    src: "https://spotify-github-profile.vercel.app/api/view?uid=kli09xgbbkil2q35z8zq4stcq&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&bar_color=622693&bar_color_cover=false",
+                                    alt: ""
+                                })
+                            })
                         ]
                         })
                     })]
