@@ -1,103 +1,432 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="theme-color" content="#000000"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover"/>
-    <meta name="description" content="Developereva page"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-    <title>Developereva
-    </title>
-    <link href="/static/css/2.3f756516.chunk.css" rel="stylesheet">
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");   
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0912">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Developereva — со-основатель EndWay, EW Files, EW Market и основатель Conchshell. Контакты, опыт работы и реквизиты для доната.">
+<title>Developereva</title>
 
-       ym(94553871, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/94553871" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-  </head>
-  <body>
-    <noscript>Включи JS чтоле еблан.
-    </noscript>
-    <div id="root">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  html, body { margin: 0; padding: 0; background: #0a0912; }
+  a { color: #9be9ff; text-decoration: none; }
+  a:hover { color: #ffffff; }
+
+  @keyframes gradmove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+  @keyframes blink   { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes pulse   { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  @keyframes toastin { from { opacity: 0; transform: translate(-50%, -12px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+  .root {
+    min-height: 100dvh;
+    font-family: 'Manrope', sans-serif;
+    color: #f2f1fb;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .bg       { position: fixed; inset: 0; background: #0a0912 url('assets/videos/matrix.gif'); opacity: 0.54; }
+  .vignette { position: fixed; inset: 0; pointer-events: none;
+              background: radial-gradient(ellipse at 50% 35%, rgba(10, 9, 18, 0.55), rgba(10, 9, 18, 0.88) 75%); }
+
+  .wrap {
+    position: relative; z-index: 2;
+    max-width: 960px; margin: 0 auto;
+    padding: 20px clamp(16px, 4vw, 24px) calc(40px + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
+  }
+
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .status { display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(242, 241, 251, 0.45); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #34e29a;
+         box-shadow: 0 0 10px rgba(52, 226, 154, 0.8); animation: pulse 2.4s ease-in-out infinite; }
+
+  .langsw { display: flex; gap: 4px; background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 999px; padding: 3px; }
+  .langsw button { font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 5px 11px;
+                   border-radius: 999px; cursor: pointer; border: none; -webkit-appearance: none;
+                   background: transparent; color: rgba(242, 241, 251, 0.4); }
+  .langsw button.active { background: rgba(255, 255, 255, 0.14); color: #fff; }
+
+  .hero { display: flex; flex-direction: column; align-items: center; text-align: center;
+          padding: clamp(36px, 9vw, 64px) 0 clamp(30px, 7vw, 48px); }
+  .avatar { border-radius: 50%; object-fit: cover; }
+  h1 { margin: 32px 0 0; font-size: clamp(34px, 9.5vw, 58px); line-height: 1.1; text-wrap: balance; }
+  h1 .name {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -2px;
+    background: linear-gradient(100deg, #eeeaff 5%, #a78bfa 45%, #7c5cff 95%);
+    background-size: 220%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: gradmove 7s ease-in-out infinite;
+  }
+  .typed { margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 15px;
+           letter-spacing: 1px; color: rgba(155, 233, 255, 0.85); min-height: 21px; }
+  .caret { animation: blink 1s steps(1) infinite; }
+
+  .tabs { display: flex; gap: 4px; margin-top: clamp(26px, 6vw, 38px); max-width: 100%;
+          background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 999px; padding: 4px; }
+  .tabs button { font-family: 'Manrope', sans-serif; font-size: clamp(12px, 3.4vw, 14px); font-weight: 700;
+                 padding: 10px clamp(12px, 2.8vw, 24px); border-radius: 999px; cursor: pointer;
+                 border: none; -webkit-appearance: none; background: transparent;
+                 color: rgba(242, 241, 251, 0.45); box-shadow: none; transition: color 0.15s ease; }
+  .tabs button.active { background: rgba(255, 255, 255, 0.12); color: #fff;
+                        box-shadow: 0 4px 24px rgba(124, 92, 255, 0.3); cursor: default; }
+
+  .grid-info   { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 14px; }
+  .grid-donate { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 14px; }
+  .col         { display: flex; flex-direction: column; gap: 14px; }
+  [hidden] { display: none !important; }
+
+  .card {
+    background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px; padding: clamp(16px, 4vw, 22px);
+    display: flex; align-items: center; gap: 16px; cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    box-sizing: border-box; width: 100%; text-align: left; font: inherit;
+    color: #f2f1fb; -webkit-appearance: none; -webkit-tap-highlight-color: transparent;
+  }
+  a.card:hover { color: #f2f1fb; }
+  .card:focus-visible { outline: 2px solid rgba(150, 111, 255, 0.9); outline-offset: 3px; }
+
+  .icon { width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px;
+          display: inline-flex; align-items: center; justify-content: center; }
+  .icon svg { width: 20px; height: 20px; display: block; }
+
+  .card-mid   { min-width: 0; }
+  .card-mid.grow { flex: 1; }
+  .card-title { display: block; font-size: 15px; font-weight: 700; }
+  .card-sub   { display: block; font-size: 13px; color: rgba(242, 241, 251, 0.5); margin-top: 2px;
+                overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card-addr  { display: block; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+                color: rgba(242, 241, 251, 0.5); margin-top: 3px;
+                overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card-act      { margin-left: auto; color: rgba(242, 241, 251, 0.35); font-size: 13px; }
+  .card-act.arrow{ font-size: 15px; }
+  .card-act.flat { margin-left: 0; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card.tg:hover   { transform: translateY(-3px); border-color: rgba(56, 172, 255, 0.45);  box-shadow: 0 14px 44px rgba(37, 163, 226, 0.25); }
+    .card.mail:hover { transform: translateY(-3px); border-color: rgba(150, 111, 255, 0.5);  box-shadow: 0 14px 44px rgba(124, 92, 255, 0.28); }
+    .card.gh:hover   { transform: translateY(-3px); border-color: rgba(34, 211, 238, 0.45);  box-shadow: 0 14px 44px rgba(34, 211, 238, 0.22); }
+    .card.usdt:hover { transform: translateY(-3px); border-color: rgba(38, 161, 123, 0.55);  box-shadow: 0 14px 44px rgba(38, 161, 123, 0.25); }
+    .card.btc:hover  { transform: translateY(-3px); border-color: rgba(248, 193, 26, 0.5);   box-shadow: 0 14px 44px rgba(248, 193, 26, 0.2); }
+    .card.eth:hover  { transform: translateY(-3px); border-color: rgba(150, 111, 255, 0.5);  box-shadow: 0 14px 44px rgba(124, 92, 255, 0.28); }
+    .card.ton:hover  { transform: translateY(-3px); border-color: rgba(56, 172, 255, 0.5);   box-shadow: 0 14px 44px rgba(0, 136, 204, 0.28); }
+  }
+
+  /* --- опыт --- */
+  .exp { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.09);
+         border-radius: 20px; padding: clamp(18px, 4.5vw, 26px);
+         display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  .chip { font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 5px 12px;
+          border-radius: 8px; white-space: nowrap; border: 1px solid transparent; }
+  .chip.cyan   { border-color: rgba(34, 211, 238, 0.4);  color: #7de9f7; }
+  .chip.violet { border-color: rgba(150, 111, 255, 0.45); color: #c3b1ff; }
+  .exp-mid  { flex: 1; min-width: 220px; }
+  .exp-name { font-size: 18px; font-weight: 800; letter-spacing: -0.2px; }
+  .exp-role { font-size: 13.5px; color: rgba(242, 241, 251, 0.5); margin-top: 4px; }
+  .exp-desc { font-size: 13px; color: rgba(242, 241, 251, 0.4); margin-top: 6px; line-height: 1.45; max-width: 460px; }
+  .exp-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px;
+          background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); }
+
+  /* --- футер / тост --- */
+  .foot { text-align: center; margin-top: 56px; font-family: 'JetBrains Mono', monospace;
+          font-size: 11px; letter-spacing: 1px; color: rgba(242, 241, 251, 0.28); }
+  #toast { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); z-index: 20;
+           background: rgba(18, 15, 34, 0.92); border: 1px solid rgba(150, 111, 255, 0.5);
+           -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+           border-radius: 999px; padding: 10px 20px; font-size: 14px; color: #f2f1fb;
+           animation: toastin 0.2s ease; }
+  .nojs { text-align: center; font-size: 13px; color: rgba(242, 241, 251, 0.5); margin-bottom: 14px; }
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(94553871, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/94553871" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+<div class="root">
+  <div class="bg"></div>
+  <div class="vignette"></div>
+
+  <div class="wrap">
+    <div class="top">
+      <span class="status"><span class="dot"></span>online</span>
+      <div class="langsw">
+        <button type="button" id="lang-ru" class="active" aria-pressed="true">RU</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+      </div>
     </div>
-    <script>!function(e){
-        function r(r){
-          for(var n,l,f=r[0],i=r[1],a=r[2],c=0,s=[];c<f.length;c++)l=f[c],Object.prototype.hasOwnProperty.call(o,l)&&o[l]&&s.push(o[l][0]),o[l]=0;
-          for(n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n]);
-          for(p&&p(r);s.length;)s.shift()();
-          return u.push.apply(u,a||[]),t()}
-        function t(){
-          for(var e,r=0;r<u.length;r++){
-            for(var t=u[r],n=!0,f=1;f<t.length;f++){
-              var i=t[f];
-              0!==o[i]&&(n=!1)}
-            n&&(u.splice(r--,1),e=l(l.s=t[0]))}
-          return e}
-        var n={
-        }
-        ,o={
-          1:0}
-        ,u=[];
-        function l(r){
-          if(n[r])return n[r].exports;
-          var t=n[r]={
-            i:r,l:!1,exports:{
-            }
-          };
-          return e[r].call(t.exports,t,t.exports,l),t.l=!0,t.exports}
-        l.m=e,l.c=n,l.d=function(e,r,t){
-          l.o(e,r)||Object.defineProperty(e,r,{
-            enumerable:!0,get:t}
-                                         )}
-          ,l.r=function(e){
-          "undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{
-            value:"Module"}
-                                                                               ),Object.defineProperty(e,"__esModule",{
-            value:!0}
-                                                                                                      )}
-          ,l.t=function(e,r){
-          if(1&r&&(e=l(e)),8&r)return e;
-          if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;
-          var t=Object.create(null);
-          if(l.r(t),Object.defineProperty(t,"default",{
-            enumerable:!0,value:e}
-                                         ),2&r&&"string"!=typeof e)for(var n in e)l.d(t,n,function(r){
-            return e[r]}
-                                                                                      .bind(null,n));
-          return t}
-          ,l.n=function(e){
-          var r=e&&e.__esModule?function(){
-            return e.default}
-          :function(){
-            return e};
-          return l.d(r,"a",r),r}
-          ,l.o=function(e,r){
-          return Object.prototype.hasOwnProperty.call(e,r)}
-          ,l.p="/";
-        var f=this.webpackJsonpd4n13l3k00=this.webpackJsonpd4n13l3k00||[],i=f.push.bind(f);
-        f.push=r,f=f.slice();
-        for(var a=0;a<f.length;a++)r(f[a]);
-        var p=i;
-        t()}
-      ([])</script>
-    <script src="/static/js/2.af0d01cd.chunk.js">
-    </script>
-    <script src="/static/js/main.2024_0.chunk.js">
-    </script>
-  </body>
+
+    <div class="hero">
+      <img class="avatar" src="assets/images/avatar.jpeg" alt="Developereva" width="112" height="112">
+      <h1><span class="name">Developereva</span></h1>
+      <div class="typed"><span id="typed"></span><span class="caret">_</span></div>
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" class="active" data-tab="info"   aria-selected="true"  aria-controls="panel-info"   data-t="info">Информация</button>
+        <button type="button" role="tab"                data-tab="exp"    aria-selected="false" aria-controls="panel-exp"    data-t="exp">Опыт работы</button>
+        <button type="button" role="tab"                data-tab="donate" aria-selected="false" aria-controls="panel-donate" data-t="donate">Донат</button>
+      </div>
+    </div>
+
+    <noscript><div class="nojs">Для переключения вкладок, смены языка и копирования включите JavaScript.</div></noscript>
+
+    <div class="grid-info" id="panel-info" role="tabpanel">
+      <a class="card tg" href="https://t.me/deveva" target="_blank" rel="noopener noreferrer">
+        <span class="icon" style="background: rgba(56, 172, 255, 0.14);"><svg fill="#6fc8ff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
+        <span class="card-mid">
+          <span class="card-title">Telegram</span>
+          <span class="card-sub">@deveva</span>
+        </span>
+        <span class="card-act arrow">↗</span>
+      </a>
+
+      <button type="button" class="card mail" data-copy="developereva@protonmail.com">
+        <span class="icon" style="background: rgba(150, 111, 255, 0.15);"><svg fill="#b9a3ff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m15.24 8.998 3.656-3.073v15.81H2.482C1.11 21.735 0 20.609 0 19.223V6.944l7.58 6.38a2.186 2.186 0 0 0 2.871-.042l4.792-4.284h-.003zm-5.456 3.538 1.809-1.616a2.438 2.438 0 0 1-1.178-.533L.905 2.395A.552.552 0 0 0 0 2.826v2.811l8.226 6.923a1.186 1.186 0 0 0 1.558-.024zM23.871 2.463a.551.551 0 0 0-.776-.068l-3.199 2.688v16.653h1.623c1.371 0 2.481-1.127 2.481-2.513V2.824a.551.551 0 0 0-.129-.36z"/></svg></span>
+        <span class="card-mid">
+          <span class="card-title" data-t="mail">Почта</span>
+          <span class="card-sub">developereva@protonmail.com</span>
+        </span>
+        <span class="card-act" data-t="copy">копировать</span>
+      </button>
+
+      <a class="card gh" href="https://github.com/Developerreva" target="_blank" rel="noopener noreferrer">
+        <span class="icon" style="background: rgba(34, 211, 238, 0.12);"><svg fill="#7de9f7" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+        <span class="card-mid">
+          <span class="card-title">GitHub</span>
+          <span class="card-sub">Developerreva</span>
+        </span>
+        <span class="card-act arrow">↗</span>
+      </a>
+    </div>
+
+    <div class="col" id="panel-exp" role="tabpanel" hidden>
+      <div class="exp">
+        <span class="chip cyan" data-t="e1y">2022 — н. в.</span>
+        <div class="exp-mid">
+          <div class="exp-name">EndWay</div>
+          <div class="exp-role" data-t="e1r">Со-основатель</div>
+          <div class="exp-desc" data-t="e1d">Форум</div>
+        </div>
+        <div class="exp-links"><a class="pill" href="https://endway.org" target="_blank" rel="noopener noreferrer">endway.org ↗</a></div>
+      </div>
+      <div class="exp">
+        <span class="chip violet" data-t="e2y">2023 — н. в.</span>
+        <div class="exp-mid">
+          <div class="exp-name">EW Files</div>
+          <div class="exp-role" data-t="e2r">Со-основатель</div>
+          <div class="exp-desc" data-t="e2d">Файлообменник</div>
+        </div>
+        <div class="exp-links"><a class="pill" href="https://ewfiles.net" target="_blank" rel="noopener noreferrer">ewfiles.net ↗</a></div>
+      </div>
+      <div class="exp">
+        <span class="chip cyan" data-t="e3y">2026 — н. в.</span>
+        <div class="exp-mid">
+          <div class="exp-name">EW Market</div>
+          <div class="exp-role" data-t="e3r">Со-основатель</div>
+          <div class="exp-desc" data-t="e3d">Площадка для покупки и продажи цифровых материалов для разработки: скрипты, исходный код, шаблоны, модули, документация</div>
+        </div>
+        <div class="exp-links"><a class="pill" href="https://market.endway.org" target="_blank" rel="noopener noreferrer">market.endway.org ↗</a></div>
+      </div>
+      <div class="exp">
+        <span class="chip violet" data-t="e4y">2026 — н. в.</span>
+        <div class="exp-mid">
+          <div class="exp-name">Conchshell</div>
+          <div class="exp-role" data-t="e4r">Основатель</div>
+          <div class="exp-desc" data-t="e4d">Бесплатный SSH, SFTP, FTPS и RDP клиент для Mac, Windows и Linux: терминал, двухпанельный файловый менеджер и удалённый рабочий стол в одном окне</div>
+        </div>
+        <div class="exp-links"><a class="pill" href="https://conchshell.app" target="_blank" rel="noopener noreferrer">conchshell.app ↗</a></div>
+      </div>
+    </div>
+
+    <div class="grid-donate" id="panel-donate" role="tabpanel" hidden>
+      <button type="button" class="card usdt" data-copy="TG23K9WgN3n4VeY345oLMRp8B6hGGWe8G3">
+        <span class="icon" style="background: rgba(38, 161, 123, 0.16);"><svg fill="#4fd6a5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.7538 10.5176c0 .6251-2.2379 1.1483-5.2381 1.2812l.0028.0007c-.0848.0064-.5233.0325-1.5012.0325-.7778 0-1.33-.0233-1.5237-.0325-3.0059-.1322-5.2495-.6555-5.2495-1.2819s2.2436-1.149 5.2495-1.2834v2.0442c.1965.0142.7594.0474 1.5372.0474.9334 0 1.4008-.0389 1.4849-.0466V9.2356c2.9994.1337 5.2381.657 5.2381 1.282zm5.19.5466L12.1248 22.389a.1803.1803 0 0 1-.2496 0L.0562 11.0635a.1781.1781 0 0 1-.0382-.2079l4.3762-9.1921a.1767.1767 0 0 1 .1626-.1026h14.8878a.1768.1768 0 0 1 .1612.1032l4.3762 9.1922a.1782.1782 0 0 1-.0382.2079zm-4.478-.4038c0-.8068-2.5515-1.4799-5.9473-1.6369V7.195h4.186V4.4055H6.3076V7.195h4.1852v1.8286c-3.4018.1562-5.9601.83-5.9601 1.6376 0 .8075 2.5583 1.4806 5.9601 1.6376v5.8618h3.025v-5.8639c3.394-.1563 5.948-.8295 5.948-1.6363z"/></svg></span>
+        <span class="card-mid grow">
+          <span class="card-title">USDT · TRC20</span>
+          <span class="card-addr">TG23K9WgN3n4VeY345oLMRp8B6hGGWe8G3</span>
+        </span>
+        <span class="card-act flat" data-t="copy">копировать</span>
+      </button>
+
+      <button type="button" class="card btc" data-copy="1LRePz4LA3RYeE1ia6D4qmdo2g1o28rJvq">
+        <span class="icon" style="background: rgba(248, 193, 26, 0.14);"><svg fill="#f2c14e" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.548v-.002zm-6.35-4.613c.24-1.59-.974-2.45-2.64-3.03l.54-2.153-1.315-.33-.525 2.107c-.345-.087-.705-.167-1.064-.25l.526-2.127-1.32-.33-.54 2.165c-.285-.067-.565-.132-.84-.2l-1.815-.45-.35 1.407s.975.225.955.236c.535.136.63.486.615.766l-1.477 5.92c-.075.166-.24.406-.614.314.015.02-.96-.24-.96-.24l-.66 1.51 1.71.426.93.242-.54 2.19 1.32.327.54-2.17c.36.1.705.19 1.05.273l-.51 2.154 1.32.33.545-2.19c2.24.427 3.93.257 4.64-1.774.57-1.637-.03-2.58-1.217-3.196.854-.193 1.5-.76 1.68-1.93h.01zm-3.01 4.22c-.404 1.64-3.157.75-4.05.53l.72-2.9c.896.23 3.757.67 3.33 2.37zm.41-4.24c-.37 1.49-2.662.735-3.405.55l.654-2.64c.744.18 3.137.524 2.75 2.084v.006z"/></svg></span>
+        <span class="card-mid grow">
+          <span class="card-title">Bitcoin</span>
+          <span class="card-addr">1LRePz4LA3RYeE1ia6D4qmdo2g1o28rJvq</span>
+        </span>
+        <span class="card-act flat" data-t="copy">копировать</span>
+      </button>
+
+      <button type="button" class="card eth" data-copy="0x77558b39759d56E97634d677dFCD2aA4ba40b0b4">
+        <span class="icon" style="background: rgba(150, 111, 255, 0.15);"><svg fill="#b9a3ff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.944 17.97L4.58 13.62 11.943 24l7.37-10.38-7.372 4.35h.003zM12.056 0L4.69 12.223l7.365 4.354 7.365-4.35L12.056 0z"/></svg></span>
+        <span class="card-mid grow">
+          <span class="card-title">Ethereum</span>
+          <span class="card-addr">0x77558b39759d56E97634d677dFCD2aA4ba40b0b4</span>
+        </span>
+        <span class="card-act flat" data-t="copy">копировать</span>
+      </button>
+
+      <button type="button" class="card ton" data-copy="EQA-iAyhNTpZLRan72pEblvL3wIQqrwZq08nAnyHkXDx8lpb">
+        <span class="icon" style="background: rgba(0, 136, 204, 0.16);"><svg fill="#6fc8ff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM7.902 6.697h8.196c1.505 0 2.462 1.628 1.705 2.94l-5.059 8.765a.86.86 0 0 1-1.488 0L6.199 9.637c-.758-1.314.197-2.94 1.703-2.94zm4.844 1.496v7.58l1.102-2.128 2.656-4.756a.465.465 0 0 0-.408-.696h-3.35zM7.9 8.195a.464.464 0 0 0-.408.694l2.658 4.754 1.102 2.13V8.195H7.9z"/></svg></span>
+        <span class="card-mid grow">
+          <span class="card-title">TON</span>
+          <span class="card-addr">EQA-iAyhNTpZLRan72pEblvL3wIQqrwZq08nAnyHkXDx8lpb</span>
+        </span>
+        <span class="card-act flat" data-t="copy">копировать</span>
+      </button>
+    </div>
+
+    <div class="foot">© developereva</div>
+  </div>
+</div>
+
+<div id="toast" hidden></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var DICT = {
+    ru: {
+      info: "Информация", exp: "Опыт работы", donate: "Донат",
+      mail: "Почта", copy: "копировать", copied: "Скопировано!",
+      e1y: "2022 — н. в.", e1r: "Со-основатель", e1d: "Форум",
+      e2y: "2023 — н. в.", e2r: "Со-основатель", e2d: "Файлообменник",
+      e3y: "2026 — н. в.", e3r: "Со-основатель", e3d: "Площадка для покупки и продажи цифровых материалов для разработки: скрипты, исходный код, шаблоны, модули, документация",
+      e4y: "2026 — н. в.", e4r: "Основатель", e4d: "Бесплатный SSH, SFTP, FTPS и RDP клиент для Mac, Windows и Linux: терминал, двухпанельный файловый менеджер и удалённый рабочий стол в одном окне"
+    },
+    en: {
+      info: "Info", exp: "Experience", donate: "Donate",
+      mail: "Mail", copy: "copy", copied: "Copied!",
+      e1y: "2022 — now", e1r: "Co-founder", e1d: "Forum",
+      e2y: "2023 — now", e2r: "Co-founder", e2d: "File sharing service",
+      e3y: "2026 — now", e3r: "Co-founder", e3d: "Marketplace for buying and selling digital materials for development: scripts, source code, templates, modules and documentation",
+      e4y: "2026 — now", e4r: "Founder", e4d: "Free SSH, SFTP, FTPS and RDP client for Mac, Windows and Linux: terminal, dual-panel file manager and remote desktop in one window"
+    }
+  };
+
+  var lang = "ru";
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  var ruBtn = $("#lang-ru"), enBtn = $("#lang-en");
+
+  function applyLang(next) {
+    lang = next;
+    var t = DICT[lang];
+    $$("[data-t]").forEach(function (el) {
+      var v = t[el.getAttribute("data-t")];
+      if (v !== undefined) el.textContent = v;
+    });
+    ruBtn.classList.toggle("active", lang === "ru");
+    enBtn.classList.toggle("active", lang === "en");
+    ruBtn.setAttribute("aria-pressed", String(lang === "ru"));
+    enBtn.setAttribute("aria-pressed", String(lang === "en"));
+    document.documentElement.lang = lang;
+  }
+
+  ruBtn.addEventListener("click", function () { applyLang("ru"); });
+  enBtn.addEventListener("click", function () { applyLang("en"); });
+
+  var panels = { info: $("#panel-info"), exp: $("#panel-exp"), donate: $("#panel-donate") };
+
+  $$(".tabs button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var tab = btn.getAttribute("data-tab");
+      $$(".tabs button").forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-selected", String(on));
+      });
+      Object.keys(panels).forEach(function (k) { panels[k].hidden = (k !== tab); });
+    });
+  });
+
+  var toastEl = $("#toast"), toastTimer;
+
+  function showToast(text) {
+    clearTimeout(toastTimer);
+    toastEl.textContent = "✓ " + text;
+    toastEl.hidden = false;
+    toastEl.style.animation = "none";
+    void toastEl.offsetWidth;
+    toastEl.style.animation = "";
+    toastTimer = setTimeout(function () { toastEl.hidden = true; }, 1800);
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  function copyText(text) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)["catch"](function () { fallbackCopy(text); });
+        return;
+      }
+    } catch (e) {}
+    fallbackCopy(text);
+  }
+
+  $$("[data-copy]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      copyText(el.getAttribute("data-copy"));
+      showToast(DICT[lang].copied);
+    });
+  });
+
+  var typedEl = $("#typed");
+  var strings = ["Developer", "NO TOXIC"];
+  var si = 0, ci = 0, del = false, timer;
+
+  function tick() {
+    var s = strings[si];
+    if (!del) {
+      ci++;
+      typedEl.textContent = s.slice(0, ci);
+      if (ci === s.length) { del = true; timer = setTimeout(tick, 1500); return; }
+      timer = setTimeout(tick, 65);
+    } else {
+      ci--;
+      typedEl.textContent = s.slice(0, ci);
+      if (ci === 0) { del = false; si = (si + 1) % strings.length; }
+      timer = setTimeout(tick, 28);
+    }
+  }
+  timer = setTimeout(tick, 500);
+})();
+</script>
+</body>
 </html>
